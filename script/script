@@ -1,0 +1,62 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeText = document.querySelector('.welcome');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            welcomeText.style.opacity = 1;
+            sections.forEach(section => {
+                section.style.opacity = 1;
+            });
+        }
+    });
+});
+
+document.querySelectorAll('header nav ul li a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const targetPosition = targetElement.offsetTop;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+const backToTopBtn = document.getElementById('back-to-top-btn');
+
+// 初始化按钮状态
+if (window.scrollY > 200) {
+    backToTopBtn.style.display = 'block';
+    backToTopBtn.style.opacity = 1;
+} else {
+    backToTopBtn.style.display = 'none';
+    backToTopBtn.style.opacity = 0;
+}
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'block';
+        let opacity = parseFloat(backToTopBtn.style.opacity);
+        if (opacity < 1) {
+            backToTopBtn.style.opacity = opacity + 0.1;
+        }
+    } else {
+        let opacity = parseFloat(backToTopBtn.style.opacity);
+        if (opacity > 0) {
+            backToTopBtn.style.opacity = opacity - 0.1;
+        }
+        if (opacity <= 0) {
+            backToTopBtn.style.display = 'none';
+        }
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
