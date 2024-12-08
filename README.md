@@ -19,7 +19,7 @@
 
 
 #### 开源协议
-本源码采用[Apache2.0](https://www.apache.org/licenses/LICENSE-2.0.html "Apache V2")协议开源，请您在使用本程序源码时务必遵守此协议
+本源码采用[Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.html "Apache V2")协议开源，请您在使用本程序源码时务必遵守此协议
 
 
 #### 联系方式
