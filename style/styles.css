@@ -1,0 +1,290 @@
+@font-face {
+    font-family: 'AiDeep';
+    src: url('AiDeep.ttf') format('truetype');
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('../image/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+
+header h1 {
+    margin: 0;
+    width: 155px;
+    height: 50px;
+    background-image: url('../image/logo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-family: AiDeep;
+}
+
+.hero h1 span:first-child {
+    display: block;
+}
+
+.hero h1 span:last-child {
+    display: inline;
+    color: inherit;
+}
+
+.hero h1 span:last-child span {
+    color: red;
+}
+
+.welcome {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+h2 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* 图块布局样式 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+}
+
+.grid-item h3 {
+    margin: 10px 0;
+}
+
+.grid-item p {
+    padding: 0 10px 10px;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+/* 成员列表样式 */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.member-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 合作伙伴样式 */
+.partner {
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.partners-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.partner-logo {
+    display: inline-block;
+    width: 150px;
+    margin-right: 20px;
+}
+
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    width: 50px; /*调整按钮大小*/
+    height: 50px; /*同步调整，上面改成什么这里就改成什么*/
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+#back-to-top-btn:hover {
+    background-color: #FFD700;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: rgba(50, 50, 255, 0.2);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero.welcome {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+header.menu-open {
+    position: relative;
+    z-index: 1001;
+}
+header.menu-open nav ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
